@@ -92,11 +92,6 @@ const scenes: Scene[] = [
     media: [{ type: 'video', src: '/media/bistro-motion.mp4', poster: '/media/bistro-stage.jpg', alt: 'Fachada cenográfica de bistrô iluminado à noite' }],
   },
   {
-    title: 'Verão solar',
-    note: 'Palha · limão · calor',
-    media: [{ type: 'video', src: '/media/summer-motion.mp4', poster: '/media/summer-stage.jpg', alt: 'Cenário solar com palmeira, espreguiçadeira e limões' }],
-  },
-  {
     title: 'Jardim menta',
     note: 'Verde · flor · delicadeza',
     media: [{ type: 'video', src: '/media/mint-motion.mp4', poster: '/media/mint-stage.jpg', alt: 'Cenário verde menta com flores e regadores metálicos' }],
