@@ -53,7 +53,7 @@ export function Hero() {
         <span aria-hidden="true" />{soundOn ? 'Som ligado' : 'Ativar som'}
       </button>
       <div className="hero-copy">
-        <p>Estúdio cenográfico · João Pessoa</p>
+        <p>Estúdio cenográfico · CARUARU</p>
         <h1 id="hero-title">ANEXO <span>7</span></h1>
         <div className="hero-line">
           <p>Um novo cenário<br />a cada 7 dias.</p>
