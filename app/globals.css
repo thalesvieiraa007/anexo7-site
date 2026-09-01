@@ -213,9 +213,10 @@ img, video { display: block; }
 
 @media (max-width: 900px) {
   .site-header { height: 70px; padding: 0 20px; }
+  .site-header.is-menu-open { height: 70px; background: transparent; border-color: transparent; backdrop-filter: none; }
   .wordmark { position: relative; z-index: 2; }
   .menu-toggle { position: relative; z-index: 2; display: block; }
-  .site-header nav { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 26px; padding: 20px; background: rgba(8,8,8,.97); font-size: 22px; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-105%); transition: transform .5s cubic-bezier(.2,.7,0,1), opacity .3s ease, visibility 0s linear .5s; }
+  .site-header nav { position: absolute; inset: 0 auto auto 0; width: 100vw; height: 100dvh; min-height: 100svh; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 26px; padding: 20px; background: rgba(8,8,8,.97); font-size: 22px; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-105%); transition: transform .5s cubic-bezier(.2,.7,0,1), opacity .3s ease, visibility 0s linear .5s; }
   .site-header nav.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); transition-delay: 0s; }
   .site-header nav .header-cta { margin-top: 10px; font-size: var(--type-meta); }
   .manifest { grid-template-columns: 1fr; gap: 60px; padding: 100px 20px; }
