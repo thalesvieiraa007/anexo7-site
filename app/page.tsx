@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { AmbientVideo } from './components/AmbientVideo';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -38,8 +37,7 @@ export default function Home() {
             <dl data-reveal="fade-up" data-reveal-delay="4"><div><dt>Formato</dt><dd>Foto + Vídeo</dd></div><div><dt>Ciclo</dt><dd>07 dias</dd></div><div><dt>Estado</dt><dd>Em transformação</dd></div></dl>
           </div>
           <div className="entry-media" data-reveal="media" data-reveal-delay="3" data-reveal-duration="long">
-            <Image className="entry-backdrop" src="/media/behind-the-scenes.jpg" alt="" fill sizes="(max-width: 800px) 100vw, 65vw" />
-            <AmbientVideo src="/media/studio-walkthrough.mp4" poster="/media/behind-the-scenes.jpg" label="Passeio visual pelo galpão e pelos bastidores do ANEXO 7" className="entry-video" />
+            <Image className="entry-backdrop" src="/media/behind-the-scenes.jpg" alt="Bastidores de uma produção no estúdio ANEXO 7" fill sizes="(max-width: 800px) 100vw, 65vw" />
             <span className="entry-time" aria-hidden="true">REC · ANEXO 7</span>
           </div>
         </section>

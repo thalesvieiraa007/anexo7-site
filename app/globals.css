@@ -118,8 +118,7 @@ img, video { display: block; }
 .entry-copy dt, .entry-copy dd { margin: 0; font-family: var(--micro); font-size: 10px; line-height: 1.45; text-transform: uppercase; letter-spacing: .12em; }
 .entry-media { position: relative; min-height: 100vh; overflow: hidden; background: #2c2b28; }
 .entry-backdrop { object-fit: cover; filter: saturate(.55) brightness(.58); }
-.entry-video { position: absolute !important; width: min(47%, 470px); aspect-ratio: 9/16; right: 7%; bottom: -3%; transform: rotate(3deg); box-shadow: 0 20px 80px rgba(0,0,0,.48); }
-.entry-video video, .ambient-video video { width: 100%; height: 100%; object-fit: cover; }
+.ambient-video video { width: 100%; height: 100%; object-fit: cover; }
 .entry-time { position: absolute; left: 28px; top: 28px; z-index: 2; font-family: var(--micro); font-size: 10px; letter-spacing: .22em; color: var(--ivory); }
 .entry-time::before { content: ''; display: inline-block; width: 6px; height: 6px; margin-right: 8px; background: #ff3b30; border-radius: 50%; animation: blink 1.2s steps(1) infinite; }
 
@@ -238,7 +237,6 @@ img, video { display: block; }
   .manifest-orbit-core { width: 60%; }
   .manifest-note { grid-template-columns: 1fr; gap: 24px; }
   .entry-copy { min-height: 70vh; }
-  .entry-video { width: 70%; right: -4%; }
   .scenarios-heading { display: block; }
   .scenarios-heading h2 { margin-top: 48px; }
   .scenarios-intro { margin-top: 28px; }
