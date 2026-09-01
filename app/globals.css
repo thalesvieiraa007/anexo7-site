@@ -54,6 +54,10 @@ img, video { display: block; }
 .hero-orbit::before { content: ''; position: absolute; top: -5px; width: 9px; height: 9px; background: var(--chrome); border-radius: 50%; box-shadow: 0 0 20px rgba(255,255,255,.75); }
 .hero-orbit span { font-size: clamp(26px, 4vw, 60px); letter-spacing: -.08em; }
 .hero-counter { position: absolute; z-index: 4; left: 32px; top: 50%; writing-mode: vertical-rl; font-family: var(--micro); font-size: 9px; letter-spacing: .25em; }
+.hero-sound-toggle { position: absolute; z-index: 6; top: 98px; right: 32px; display: flex; align-items: center; gap: 10px; padding: 11px 15px; border: 1px solid rgba(255,255,255,.48); border-radius: 999px; background: rgba(8,8,8,.34); color: var(--ivory); backdrop-filter: blur(14px); font-family: var(--micro); font-size: 9px; text-transform: uppercase; letter-spacing: .14em; cursor: pointer; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+.hero-sound-toggle > span { width: 7px; height: 7px; border-radius: 50%; background: var(--chrome-dark); box-shadow: 0 0 0 4px rgba(255,255,255,.08); }
+.hero-sound-toggle:hover, .hero-sound-toggle:focus-visible, .hero-sound-toggle.is-on { border-color: var(--chrome); background: var(--chrome); color: var(--ink); }
+.hero-sound-toggle.is-on > span { background: var(--ink); animation: sound-pulse 1.4s ease-in-out infinite; }
 
 .section-index, .section-kicker { margin: 0; font-family: var(--micro); font-size: 9px; text-transform: uppercase; letter-spacing: .25em; }
 .section-index { color: var(--chrome); }
@@ -155,6 +159,7 @@ img, video { display: block; }
 @keyframes drift { to { transform: translateX(45px); } }
 @keyframes blink { 50% { opacity: .2; } }
 @keyframes sphere-float { from { transform: translate3d(0, -8px, 0) rotate(-3deg); } to { transform: translate3d(12px, 18px, 0) rotate(4deg); } }
+@keyframes sound-pulse { 50% { opacity: .38; transform: scale(.72); } }
 
 @media (max-width: 900px) {
   .site-header { height: 70px; padding: 0 20px; }
@@ -181,6 +186,7 @@ img, video { display: block; }
 
 @media (max-width: 620px) {
   .hero-copy { inset: auto 20px 24px; }
+  .hero-sound-toggle { top: 82px; right: 20px; }
   .hero h1 { font-size: clamp(64px, 21vw, 92px); line-height: .78; white-space: nowrap; }
   .hero-line { align-items: flex-end; }
   .hero-line a { display: none; }

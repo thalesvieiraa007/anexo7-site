@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isVisible = useRef(true);
+  const [soundOn, setSoundOn] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -32,6 +33,15 @@ export function Hero() {
     };
   }, []);
 
+  function toggleSound() {
+    const video = videoRef.current;
+    if (!video) return;
+    const nextSoundOn = !soundOn;
+    video.muted = !nextSoundOn;
+    setSoundOn(nextSoundOn);
+    if (nextSoundOn) video.play().catch(() => undefined);
+  }
+
   return (
     <section ref={sectionRef} className="hero" id="inicio" aria-labelledby="hero-title">
       <video ref={videoRef} className="hero-video" aria-label="Vídeo de apresentação do estúdio ANEXO 7" autoPlay muted loop playsInline preload="metadata" poster="/media/hero-industrial.jpg">
@@ -39,6 +49,9 @@ export function Hero() {
       </video>
       <div className="hero-shade" />
       <div className="floating-spheres hero-spheres" aria-hidden="true"><span /><span /><span /></div>
+      <button className={`hero-sound-toggle${soundOn ? ' is-on' : ''}`} type="button" aria-pressed={soundOn} onClick={toggleSound}>
+        <span aria-hidden="true" />{soundOn ? 'Som ligado' : 'Ativar som'}
+      </button>
       <div className="hero-copy">
         <p>Estúdio cenográfico · João Pessoa</p>
         <h1 id="hero-title">ANEXO <span>7</span></h1>
