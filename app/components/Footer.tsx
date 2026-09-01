@@ -9,11 +9,11 @@ export function Footer() {
 
   return (
     <footer className="site-footer" id="contato">
-      <div className="footer-callout">
+      <div className="footer-callout" data-reveal-section>
         <p data-reveal="blur" data-reveal-duration="long">Seu próximo set<br />pode começar aqui.</p>
         <a data-reveal="fade-left" data-reveal-delay="2" href="https://wa.me/message/JHS64XR2XQUQH1" target="_blank" rel="noreferrer">Falar com o ANEXO 7 <span aria-hidden="true">↗</span></a>
       </div>
-      <div className="footer-grid">
+      <div className="footer-grid" data-reveal-section>
         <div className="footer-brand" data-reveal="fade-up"><a className="footer-wordmark" href="#inicio" aria-label="ANEXO 7 — início"><BrandMark className="brand-mark-footer" /></a><p>Estúdio cenográfico para fotografia, moda, conteúdo e audiovisual.</p></div>
         <div className="footer-links" data-reveal="fade-up" data-reveal-delay="1"><p>Conecte-se</p><a href="https://www.instagram.com/anexo7estudio/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://wa.me/message/JHS64XR2XQUQH1" target="_blank" rel="noreferrer">WhatsApp ↗</a><a href="https://share.google/JmyZKXWmNFDlbMyon" target="_blank" rel="noreferrer">Localização ↗</a></div>
         <div className="newsletter" data-reveal="fade-up" data-reveal-delay="2">
@@ -22,7 +22,7 @@ export function Footer() {
           <small>Sem spam. Só novas ideias em cena.</small>
         </div>
       </div>
-      <div className="footer-bottom" data-reveal="fade-up"><p>© {new Date().getFullYear()} ANEXO 7</p><p>Um novo cenário a cada 7 dias.</p><a href="#inicio">Voltar ao topo ↑</a></div>
+      <div className="footer-bottom" data-reveal-section data-reveal="fade-up"><p>© {new Date().getFullYear()} ANEXO 7</p><p>Um novo cenário a cada 7 dias.</p><a href="#inicio">Voltar ao topo ↑</a></div>
     </footer>
   );
 }

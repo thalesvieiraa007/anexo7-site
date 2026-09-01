@@ -1,23 +1,22 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 
-const selector = '[data-reveal]';
+const sectionSelector = '[data-reveal-section]';
 
 export function ScrollReveal() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const root = document.documentElement;
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     let observer: IntersectionObserver | null = null;
-    let frame = 0;
 
-    const elements = () => Array.from(document.querySelectorAll<HTMLElement>(selector));
+    const sections = () => Array.from(document.querySelectorAll<HTMLElement>(sectionSelector));
 
     const revealEverything = () => {
       observer?.disconnect();
       observer = null;
       root.classList.remove('reveal-ready');
-      elements().forEach((element) => element.classList.add('is-revealed'));
+      sections().forEach((section) => section.classList.add('is-reveal-active'));
     };
 
     const start = () => {
@@ -26,21 +25,26 @@ export function ScrollReveal() {
         return;
       }
 
-      elements().forEach((element) => element.classList.remove('is-revealed'));
+      root.classList.add('reveal-ready');
+      sections().forEach((section) => section.classList.remove('is-reveal-active'));
+
+      if (!('IntersectionObserver' in window)) {
+        revealEverything();
+        return;
+      }
+
       observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-revealed');
+          entry.target.classList.add('is-reveal-active');
           observer?.unobserve(entry.target);
         });
-      }, { rootMargin: '0px 0px -9% 0px', threshold: 0.08 });
+      }, { rootMargin: '0px 0px -22% 0px', threshold: 0.06 });
 
-      elements().forEach((element) => observer?.observe(element));
-      frame = window.requestAnimationFrame(() => root.classList.add('reveal-ready'));
+      sections().forEach((section) => observer?.observe(section));
     };
 
     const syncMotionPreference = () => {
-      window.cancelAnimationFrame(frame);
       observer?.disconnect();
       start();
     };
@@ -49,7 +53,6 @@ export function ScrollReveal() {
     motionQuery.addEventListener('change', syncMotionPreference);
 
     return () => {
-      window.cancelAnimationFrame(frame);
       observer?.disconnect();
       motionQuery.removeEventListener('change', syncMotionPreference);
       root.classList.remove('reveal-ready');
