@@ -3,6 +3,7 @@ import { AmbientVideo } from './components/AmbientVideo';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { OrbitSeven } from './components/OrbitSeven';
 import { ScenarioGallery } from './components/ScenarioGallery';
 import { ScrollReveal } from './components/ScrollReveal';
 
@@ -16,7 +17,7 @@ export default function Home() {
 
       <div id="conteudo">
         <section className="manifest" id="conceito" data-reveal-section aria-labelledby="manifest-title">
-          <div className="manifest-number" data-reveal="scale" data-reveal-delay="3" data-reveal-duration="long" aria-hidden="true"><span>7</span><i>dias · novos mundos ·</i></div>
+          <div className="manifest-number" data-reveal="scale" data-reveal-delay="3" data-reveal-duration="long" aria-hidden="true"><OrbitSeven /></div>
           <div className="manifest-copy">
             <p className="section-index" data-reveal="fade-up">01 — 07</p>
             <p className="section-kicker" data-reveal="fade-up" data-reveal-delay="1">O estúdio nunca fica pronto</p>
