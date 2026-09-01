@@ -48,7 +48,6 @@ export function Hero() {
         <source src="/media/hero-presentation.mp4" type="video/mp4" />
       </video>
       <div className="hero-shade" />
-      <div className="floating-spheres hero-spheres" aria-hidden="true"><span /><span /><span /></div>
       <button className={`hero-sound-toggle${soundOn ? ' is-on' : ''}`} type="button" aria-pressed={soundOn} onClick={toggleSound}>
         <span aria-hidden="true" />{soundOn ? 'Som ligado' : 'Ativar som'}
       </button>
