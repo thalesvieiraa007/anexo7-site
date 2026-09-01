@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { BrandMark } from './BrandMark';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,7 +17,7 @@ export function Header() {
   return (
     <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
       <a className="wordmark" href="#inicio" aria-label="ANEXO 7 — início" onClick={() => setOpen(false)}>
-        ANEXO <span>7</span>
+        <BrandMark />
       </a>
       <button className="menu-toggle" type="button" aria-expanded={open} aria-controls="main-navigation" aria-label={open ? 'Fechar menu' : 'Abrir menu'} onClick={() => setOpen((value) => !value)}>
         <span /><span />
@@ -30,4 +31,3 @@ export function Header() {
     </header>
   );
 }
-

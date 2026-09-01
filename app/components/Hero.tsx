@@ -1,10 +1,44 @@
-import Image from 'next/image';
+'use client';
+
+import { useEffect, useRef } from 'react';
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const isVisible = useRef(true);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const section = sectionRef.current;
+    if (!video || !section) return;
+
+    const syncPlayback = () => {
+      if (isVisible.current && !document.hidden) video.play().catch(() => undefined);
+      else video.pause();
+    };
+
+    const observer = new IntersectionObserver(([entry]) => {
+      isVisible.current = entry.isIntersecting && entry.intersectionRatio >= 0.28;
+      syncPlayback();
+    }, { threshold: [0, 0.28, 0.65] });
+
+    observer.observe(section);
+    document.addEventListener('visibilitychange', syncPlayback);
+    syncPlayback();
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', syncPlayback);
+    };
+  }, []);
+
   return (
-    <section className="hero" id="inicio" aria-labelledby="hero-title">
-      <Image src="/media/hero-industrial.jpg" alt="Produção de moda no cenário industrial do ANEXO 7" fill priority sizes="100vw" />
+    <section ref={sectionRef} className="hero" id="inicio" aria-labelledby="hero-title">
+      <video ref={videoRef} className="hero-video" aria-label="Vídeo de apresentação do estúdio ANEXO 7" autoPlay muted loop playsInline preload="metadata" poster="/media/hero-industrial.jpg">
+        <source src="/media/hero-presentation.mp4" type="video/mp4" />
+      </video>
       <div className="hero-shade" />
+      <div className="floating-spheres hero-spheres" aria-hidden="true"><span /><span /><span /></div>
       <div className="hero-copy">
         <p>Estúdio cenográfico · João Pessoa</p>
         <h1 id="hero-title">ANEXO <span>7</span></h1>
@@ -18,4 +52,3 @@ export function Hero() {
     </section>
   );
 }
-

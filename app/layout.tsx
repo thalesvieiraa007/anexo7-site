@@ -7,6 +7,7 @@ const description = 'Estúdio cenográfico para fotografia, moda, campanhas e au
 export const metadata: Metadata = {
   title,
   description,
+  icons: { icon: '/media/anexo7-logo.jpg', apple: '/media/anexo7-logo.jpg' },
   openGraph: { title, description, images: [{ url: '/og.png', width: 1731, height: 909, alt: title }], locale: 'pt_BR', type: 'website' },
   twitter: { card: 'summary_large_image', title, description, images: ['/og.png'] },
 };
@@ -14,4 +15,3 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="pt-BR"><body>{children}</body></html>;
 }
-

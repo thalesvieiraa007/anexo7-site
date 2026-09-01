@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import { BrandMark } from './BrandMark';
 
 export function Footer() {
   const [sent, setSent] = useState(false);
@@ -13,7 +14,7 @@ export function Footer() {
         <a href="https://wa.me/message/JHS64XR2XQUQH1" target="_blank" rel="noreferrer">Falar com o ANEXO 7 <span aria-hidden="true">↗</span></a>
       </div>
       <div className="footer-grid">
-        <div className="footer-brand"><a className="footer-wordmark" href="#inicio">ANEXO <span>7</span></a><p>Estúdio cenográfico para fotografia, moda, conteúdo e audiovisual.</p></div>
+        <div className="footer-brand"><a className="footer-wordmark" href="#inicio" aria-label="ANEXO 7 — início"><BrandMark className="brand-mark-footer" /></a><p>Estúdio cenográfico para fotografia, moda, conteúdo e audiovisual.</p></div>
         <div className="footer-links"><p>Conecte-se</p><a href="https://www.instagram.com/anexo7estudio/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://wa.me/message/JHS64XR2XQUQH1" target="_blank" rel="noreferrer">WhatsApp ↗</a><a href="https://share.google/JmyZKXWmNFDlbMyon" target="_blank" rel="noreferrer">Localização ↗</a></div>
         <div className="newsletter">
           <p>Receba o próximo cenário.</p>
@@ -25,4 +26,3 @@ export function Footer() {
     </footer>
   );
 }
-

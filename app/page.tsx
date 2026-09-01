@@ -43,6 +43,7 @@ export default function Home() {
         <ScenarioGallery />
 
         <section className="cycle-statement" aria-label="Conceito de renovação semanal">
+          <div className="floating-spheres cycle-spheres" aria-hidden="true"><span /><span /><span /><span /></div>
           <p>Quando você voltar,</p>
           <h2>já será<br /><span>outro lugar.</span></h2>
           <div className="cycle-seven" aria-hidden="true">7</div>
@@ -54,4 +55,3 @@ export default function Home() {
     </main>
   );
 }
-
