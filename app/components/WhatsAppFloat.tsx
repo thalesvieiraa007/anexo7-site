@@ -1,3 +1,5 @@
+import { FaWhatsapp } from 'react-icons/fa6';
+
 export function WhatsAppFloat() {
   return (
     <a
@@ -5,10 +7,10 @@ export function WhatsAppFloat() {
       href="https://wa.me/message/JHS64XR2XQUQH1"
       target="_blank"
       rel="noreferrer"
-      aria-label="Garanta sua data pelo WhatsApp do ANEXO 7"
+      aria-label="Agende seu cenário agora pelo WhatsApp do ANEXO 7"
     >
-      <span className="whatsapp-mark" aria-hidden="true">WA</span>
-      <span><small>WhatsApp</small>Garanta sua data</span>
+      <span className="whatsapp-mark" aria-hidden="true"><FaWhatsapp /></span>
+      <span><small>WhatsApp</small>Agende seu cenário agora</span>
       <i aria-hidden="true">↗</i>
     </a>
   );

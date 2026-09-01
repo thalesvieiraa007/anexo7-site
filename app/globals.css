@@ -188,6 +188,7 @@ img, video { display: block; }
 .whatsapp-float small { opacity: .56; font-size: var(--type-detail); line-height: 1.35; letter-spacing: .12em; }
 .whatsapp-float i { font-style: normal; font-size: 16px; }
 .whatsapp-mark { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid currentColor; border-radius: 50%; font-size: var(--type-detail); line-height: 1; letter-spacing: .03em; }
+.whatsapp-mark svg { width: 21px; height: 21px; }
 
 .floating-spheres { position: absolute; inset: 0; z-index: 2; overflow: hidden; pointer-events: none; }
 .floating-spheres span { position: absolute; display: block; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 30% 24%, #ffffff 0 2%, #d8d8d4 11%, #858682 27%, #2a2b2a 48%, #d2d2ce 68%, #555653 82%, #151515 100%); box-shadow: inset -18px -22px 34px rgba(0,0,0,.45), inset 12px 12px 22px rgba(255,255,255,.22), 0 30px 65px rgba(0,0,0,.32); opacity: .82; animation: sphere-float 8s ease-in-out infinite alternate; }
@@ -262,6 +263,7 @@ img, video { display: block; }
   .whatsapp-float { right: 14px; bottom: 14px; min-width: 0; padding: 8px; }
   .whatsapp-float > span:nth-child(2), .whatsapp-float > i { display: none; }
   .whatsapp-mark { width: 44px; height: 44px; }
+  .whatsapp-mark svg { width: 24px; height: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
