@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const H = {
   front: 'M 142 400 A 258 70 0 0 0 658 400',
   back: 'M 142 400 A 258 70 0 0 1 658 400',
@@ -29,7 +31,14 @@ export function OrbitSeven() {
   return (
     <>
       <OrbitLayer side="back" />
-      <span>7</span>
+      <Image
+        className="manifest-orbit-logo"
+        src="/media/anexo7-logo-transparent.png"
+        alt=""
+        width={2169}
+        height={725}
+        sizes="(max-width: 620px) 66vw, (max-width: 900px) 360px, 30vw"
+      />
       <OrbitLayer side="front" />
       <i>dias · novos mundos ·</i>
     </>
