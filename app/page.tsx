@@ -6,6 +6,7 @@ import { Hero } from './components/Hero';
 import { OrbitSeven } from './components/OrbitSeven';
 import { ScenarioGallery } from './components/ScenarioGallery';
 import { ScrollReveal } from './components/ScrollReveal';
+import { WhatsAppFloat } from './components/WhatsAppFloat';
 
 export default function Home() {
   return (
@@ -55,6 +56,7 @@ export default function Home() {
       </div>
 
       <Footer />
+      <WhatsAppFloat />
     </main>
   );
 }

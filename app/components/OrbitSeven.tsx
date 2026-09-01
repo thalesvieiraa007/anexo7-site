@@ -31,14 +31,16 @@ export function OrbitSeven() {
   return (
     <>
       <OrbitLayer side="back" />
-      <Image
-        className="manifest-orbit-logo"
-        src="/media/anexo7-logo-transparent.png"
-        alt=""
-        width={2169}
-        height={725}
-        sizes="(max-width: 620px) 66vw, (max-width: 900px) 360px, 30vw"
-      />
+      <span className="manifest-orbit-core">
+        <Image
+          className="manifest-orbit-logo"
+          src="/media/anexo7-mark-transparent.png"
+          alt=""
+          width={1774}
+          height={887}
+          sizes="(max-width: 620px) 52vw, (max-width: 900px) 290px, 24vw"
+        />
+      </span>
       <OrbitLayer side="front" />
       <i>dias · novos mundos ·</i>
     </>
