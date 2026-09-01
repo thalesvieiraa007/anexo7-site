@@ -59,7 +59,6 @@ export function Hero() {
           <a href="#conceito">Entrar no estúdio <span aria-hidden="true">↓</span></a>
         </div>
       </div>
-      <div className="hero-orbit" aria-hidden="true"><span>07</span></div>
       <div className="hero-counter" aria-hidden="true">00:07</div>
     </section>
   );
