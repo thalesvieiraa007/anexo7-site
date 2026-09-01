@@ -52,8 +52,7 @@ img, video { display: block; }
 .reveal-ready [data-reveal="scale"] { filter: blur(7px); transform: translate3d(0, 24px, 0) scale(.965); }
 .reveal-ready [data-reveal="media"] { clip-path: inset(4% 5% 4% 5%); filter: blur(8px); transform: translate3d(0, 28px, 0) scale(1.025); }
 .reveal-ready [data-reveal="scene"] { filter: blur(8px); transform: translate3d(0, 44px, 0) scale(.98); }
-.reveal-ready [data-reveal-section].is-reveal-active[data-reveal],
-.reveal-ready [data-reveal-section].is-reveal-active [data-reveal] { opacity: 1; filter: blur(0); transform: translate3d(0, 0, 0) scale(1); clip-path: inset(0); will-change: auto; }
+.reveal-ready [data-reveal].is-revealed { opacity: 1; filter: blur(0); transform: translate3d(0, 0, 0) scale(1); clip-path: inset(0); will-change: auto; }
 
 .site-header { position: fixed; inset: 0 0 auto; z-index: 30; display: flex; align-items: center; justify-content: space-between; height: 82px; padding: 0 32px; transition: background .4s ease, height .4s ease, border-color .4s ease; border-bottom: 1px solid transparent; }
 .site-header.is-scrolled { height: 68px; background: rgba(8,8,8,.82); backdrop-filter: blur(18px); border-color: var(--line); }
@@ -94,13 +93,13 @@ img, video { display: block; }
 .orbit-layer { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .orbit-layer-back { z-index: 1; }
 .orbit-layer-front { z-index: 3; }
-.orbit-group { transform-box: view-box; transform-origin: 50% 50%; will-change: transform; }
+.orbit-group { transform-box: view-box; transform-origin: 400px 400px; transform: rotate(0deg); will-change: transform; }
 .orbit-path { fill: none; stroke: currentColor; stroke-width: 1; stroke-linecap: round; vector-effect: non-scaling-stroke; }
 .orbit-back { color: rgba(214,214,210,.24); }
 .orbit-front { color: rgba(238,237,232,.62); }
-.anim-h { animation: manifest-spin-h 22s linear infinite; }
-.anim-v { animation: manifest-spin-v 36s linear infinite; }
-.anim-d { animation: manifest-spin-d 51s linear infinite; }
+.manifest-number .anim-h { animation: manifest-spin-h 22s linear infinite; animation-play-state: running; }
+.manifest-number .anim-v { animation: manifest-spin-v 36s linear infinite; animation-play-state: running; }
+.manifest-number .anim-d { animation: manifest-spin-d 51s linear infinite; animation-play-state: running; }
 .manifest-copy { position: relative; z-index: 2; }
 .manifest-copy .section-kicker { margin-top: 18px; }
 .manifest-copy h2 { margin: 7vh 0 8vh; font-size: clamp(42px, 6vw, 100px); line-height: .9; letter-spacing: -.07em; font-weight: 500; }
@@ -184,9 +183,9 @@ img, video { display: block; }
 .footer-bottom a { color: var(--ivory); }
 
 @keyframes hero-enter { from { opacity: 0; transform: scale(1.1); } to { opacity: 1; transform: scale(1.02); } }
-@keyframes manifest-spin-h { to { transform: rotate(360deg); } }
-@keyframes manifest-spin-v { to { transform: rotate(-360deg); } }
-@keyframes manifest-spin-d { to { transform: rotate(360deg); } }
+@keyframes manifest-spin-h { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes manifest-spin-v { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+@keyframes manifest-spin-d { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @keyframes drift { to { transform: translateX(45px); } }
 @keyframes blink { 50% { opacity: .2; } }
 @keyframes sphere-float { from { transform: translate3d(0, -8px, 0) rotate(-3deg); } to { transform: translate3d(12px, 18px, 0) rotate(4deg); } }

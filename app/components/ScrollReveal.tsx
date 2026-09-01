@@ -2,7 +2,7 @@
 
 import { useLayoutEffect } from 'react';
 
-const sectionSelector = '[data-reveal-section]';
+const revealSelector = '[data-reveal]';
 
 export function ScrollReveal() {
   useLayoutEffect(() => {
@@ -10,13 +10,13 @@ export function ScrollReveal() {
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     let observer: IntersectionObserver | null = null;
 
-    const sections = () => Array.from(document.querySelectorAll<HTMLElement>(sectionSelector));
+    const elements = () => Array.from(document.querySelectorAll<HTMLElement>(revealSelector));
 
     const revealEverything = () => {
       observer?.disconnect();
       observer = null;
       root.classList.remove('reveal-ready');
-      sections().forEach((section) => section.classList.add('is-reveal-active'));
+      elements().forEach((element) => element.classList.add('is-revealed'));
     };
 
     const start = () => {
@@ -26,7 +26,6 @@ export function ScrollReveal() {
       }
 
       root.classList.add('reveal-ready');
-      sections().forEach((section) => section.classList.remove('is-reveal-active'));
 
       if (!('IntersectionObserver' in window)) {
         revealEverything();
@@ -36,12 +35,14 @@ export function ScrollReveal() {
       observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-reveal-active');
+          entry.target.classList.add('is-revealed');
           observer?.unobserve(entry.target);
         });
-      }, { rootMargin: '0px 0px -22% 0px', threshold: 0.06 });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.04 });
 
-      sections().forEach((section) => observer?.observe(section));
+      elements().forEach((element) => {
+        if (!element.classList.contains('is-revealed')) observer?.observe(element);
+      });
     };
 
     const syncMotionPreference = () => {
