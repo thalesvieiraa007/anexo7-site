@@ -56,7 +56,10 @@ export function BackstageSection() {
             Antes da imagem,<br />vem o processo.
           </h2>
           <p className="backstage-intro" data-reveal="fade-up" data-reveal-delay="3">
-            Luz, direção, movimento e tudo o que acontece antes do clique final.
+            Luz, direção, preparação e movimento. O que acontece antes do resultado também faz parte da cena.
+          </p>
+          <p className="backstage-scroll-cue" data-reveal="fade-up" data-reveal-delay="4" aria-hidden="true">
+            Role para ver os bastidores <span>↓</span>
           </p>
         </div>
       </header>
