@@ -271,29 +271,26 @@ img, video { display: block; user-select: none; -webkit-user-select: none; -webk
   .backstage-heading h2 { font-size: clamp(52px, 15.5vw, 82px); line-height: .9; }
   .backstage-intro { margin: 24px 0 0; max-width: 360px; font-size: clamp(18px, 5vw, 21px); }
   .backstage-scroll-cue { margin-top: 20px; }
-  .backstage-stage { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; gap: 14px 10px; }
+  .backstage-stage { z-index: 20; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto auto auto; align-items: start; gap: 12px 10px; }
   .backstage-card { width: auto; align-self: stretch; }
-  .backstage-card--main { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 4 / 3; }
-  .backstage-card--portrait { grid-column: 1 / -1; grid-row: auto; width: 92%; aspect-ratio: 1 / 1.05; justify-self: end; }
-  .backstage-card--portrait video { object-fit: contain; background: #090909; }
-  .backstage-card--production, .backstage-card--wide { grid-row: auto; width: auto; aspect-ratio: 1 / 1; align-self: stretch; }
-  .backstage-card--production { grid-column: 1; }
-  .backstage-card--wide { grid-column: 2; }
+  .backstage-card--main { grid-column: 1 / -1; grid-row: 1; width: 96%; aspect-ratio: 4 / 3; justify-self: start; }
+  .backstage-card--portrait { grid-column: 1; grid-row: 2; width: auto; aspect-ratio: 1 / 1; justify-self: stretch; }
+  .backstage-card--production { grid-column: 2; grid-row: 2; width: auto; aspect-ratio: 1 / 1; align-self: stretch; }
+  .backstage-card--wide { grid-column: 1 / -1; grid-row: 3; width: 96%; aspect-ratio: 16 / 10; justify-self: end; }
+  .backstage-card--portrait video { object-fit: cover; object-position: 50% 52%; background: #090909; }
+  .backstage-card--production video { object-position: 48% 50%; }
   .backstage-card::after, .backstage-card .ambient-video { inset: 8px; }
   .backstage-frame { inset: 4px; background-size: 12px 1px, 1px 12px, 12px 1px, 1px 12px, 12px 1px, 1px 12px, 12px 1px, 1px 12px; }
   .backstage-card-top { top: 20px; right: 21px; left: 21px; }
   .backstage-card figcaption { right: 21px; bottom: 18px; left: 21px; gap: 2px 12px; }
   .backstage-card-top, .backstage-card figcaption { font-size: var(--type-label); }
-  .backstage-card--production .backstage-card-top, .backstage-card--wide .backstage-card-top { top: 14px; right: 15px; left: 15px; gap: 7px; font-size: 10px; letter-spacing: .06em; }
-  .backstage-card--production .backstage-card-top span:last-child, .backstage-card--wide .backstage-card-top span:last-child { font-size: 0; }
-  .backstage-card--production .backstage-card-top span:last-child::after, .backstage-card--wide .backstage-card-top span:last-child::after { font-size: 10px; }
-  .backstage-card--production .backstage-card-top span:last-child::after { content: '03'; }
-  .backstage-card--wide .backstage-card-top span:last-child::after { content: '04'; }
-  .backstage-card--production figcaption, .backstage-card--wide figcaption { right: 15px; bottom: 13px; left: 15px; gap: 2px 7px; font-size: 10px; letter-spacing: .04em; }
-  .backstage-card--production figcaption span:first-child, .backstage-card--wide figcaption span:first-child { font-size: 0; }
-  .backstage-card--production figcaption span:first-child::after, .backstage-card--wide figcaption span:first-child::after { content: 'EM PRODUÇÃO'; font-size: 10px; }
-  .backstage-card--production figcaption span:nth-child(2), .backstage-card--wide figcaption span:nth-child(2) { display: none; }
-  .backstage-card--production figcaption time, .backstage-card--wide figcaption time { grid-row: 1; }
+  .backstage-card--portrait .backstage-card-top, .backstage-card--production .backstage-card-top { top: 14px; right: 15px; left: 15px; gap: 6px; font-size: clamp(8px, 2.25vw, 9px); letter-spacing: .035em; white-space: nowrap; }
+  .backstage-card--portrait .backstage-rec, .backstage-card--production .backstage-rec { gap: 4px; }
+  .backstage-card--portrait .backstage-rec::before, .backstage-card--production .backstage-rec::before { width: 5px; height: 5px; }
+  .backstage-card--portrait figcaption, .backstage-card--production figcaption { right: 15px; bottom: 13px; left: 15px; gap: 2px 5px; font-size: clamp(8px, 2.2vw, 9px); letter-spacing: .025em; }
+  .backstage-card--portrait figcaption span:first-child, .backstage-card--production figcaption span:first-child { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .backstage-card--portrait figcaption span:nth-child(2), .backstage-card--production figcaption span:nth-child(2) { display: none; }
+  .backstage-card--portrait figcaption time, .backstage-card--production figcaption time { grid-row: 1; white-space: nowrap; }
   .scenarios-heading { display: block; }
   .scenarios-heading h2 { margin-top: 48px; }
   .scenarios-intro { margin-top: 28px; }
@@ -310,7 +307,7 @@ img, video { display: block; user-select: none; -webkit-user-select: none; -webk
   .newsletter { grid-column: auto; }
   .footer-bottom { flex-direction: column; gap: 12px; }
   .brand-mark-footer { width: 258px; height: 86px; }
-  .whatsapp-float { right: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); width: 48px; height: 48px; }
+  .whatsapp-float { z-index: 15; right: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); width: 48px; height: 48px; }
   .whatsapp-mark svg { width: 23px; height: 23px; }
 }
 
