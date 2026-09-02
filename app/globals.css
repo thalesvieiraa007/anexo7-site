@@ -273,10 +273,11 @@ img, video { display: block; user-select: none; -webkit-user-select: none; -webk
   .backstage-scroll-cue { margin-top: 20px; }
   .backstage-stage { z-index: 20; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto auto auto; align-items: start; gap: 12px 10px; }
   .backstage-card { width: auto; align-self: stretch; }
-  .backstage-card--main { grid-column: 1 / -1; grid-row: 1; width: 96%; aspect-ratio: 4 / 3; justify-self: start; }
+  .backstage-card--main, .backstage-card--wide { width: 96%; justify-self: center; }
+  .backstage-card--main { grid-column: 1 / -1; grid-row: 1; aspect-ratio: 4 / 3; }
   .backstage-card--portrait { grid-column: 1; grid-row: 2; width: auto; aspect-ratio: 1 / 1; justify-self: stretch; }
   .backstage-card--production { grid-column: 2; grid-row: 2; width: auto; aspect-ratio: 1 / 1; align-self: stretch; }
-  .backstage-card--wide { grid-column: 1 / -1; grid-row: 3; width: 96%; aspect-ratio: 16 / 10; justify-self: end; }
+  .backstage-card--wide { grid-column: 1 / -1; grid-row: 3; aspect-ratio: 16 / 10; }
   .backstage-card--portrait video { object-fit: cover; object-position: 50% 52%; background: #090909; }
   .backstage-card--production video { object-position: 48% 50%; }
   .backstage-card::after, .backstage-card .ambient-video { inset: 8px; }
