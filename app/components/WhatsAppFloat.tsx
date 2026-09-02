@@ -7,11 +7,9 @@ export function WhatsAppFloat() {
       href="https://wa.me/message/JHS64XR2XQUQH1"
       target="_blank"
       rel="noreferrer"
-      aria-label="Agende seu cenário agora pelo WhatsApp do ANEXO 7"
+      aria-label="Falar com o ANEXO 7 no WhatsApp"
     >
       <span className="whatsapp-mark" aria-hidden="true"><FaWhatsapp /></span>
-      <span><small>WhatsApp</small>Agende seu cenário agora</span>
-      <i aria-hidden="true">↗</i>
     </a>
   );
 }

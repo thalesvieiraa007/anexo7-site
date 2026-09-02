@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { MediaProtection } from './components/MediaProtection';
 import './globals.css';
 
 const title = 'ANEXO 7 — Um novo cenário a cada 7 dias';
@@ -13,5 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="pt-BR"><body>{children}</body></html>;
+  return <html lang="pt-BR"><body><MediaProtection />{children}</body></html>;
 }

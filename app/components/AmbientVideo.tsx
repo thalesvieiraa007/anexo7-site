@@ -29,10 +29,9 @@ export function AmbientVideo({ src, poster, label, className = '' }: AmbientVide
 
   return (
     <div ref={frameRef} className={`ambient-video ${className}`.trim()}>
-      <video ref={videoRef} aria-label={label} poster={poster} muted loop playsInline preload="none">
+      <video ref={videoRef} aria-label={label} poster={poster} muted loop playsInline preload="none" draggable={false} controlsList="nodownload noremoteplayback" disablePictureInPicture>
         {nearViewport && !reduceMotion ? <source src={src} type="video/mp4" /> : null}
       </video>
     </div>
   );
 }
-

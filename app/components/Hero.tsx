@@ -44,7 +44,7 @@ export function Hero() {
 
   return (
     <section ref={sectionRef} className="hero" id="inicio" aria-labelledby="hero-title">
-      <video ref={videoRef} className="hero-video" aria-label="Vídeo de apresentação do estúdio ANEXO 7" autoPlay muted loop playsInline preload="metadata" poster="/media/hero-industrial.jpg">
+      <video ref={videoRef} className="hero-video" aria-label="Vídeo de apresentação do estúdio ANEXO 7" autoPlay muted loop playsInline preload="metadata" poster="/media/hero-industrial.jpg" draggable={false} controlsList="nodownload noremoteplayback" disablePictureInPicture>
         <source src="/media/hero-presentation.mp4" type="video/mp4" />
       </video>
       <div className="hero-shade" />
