@@ -18,7 +18,10 @@ const scenes: Scene[] = [
   {
     title: 'Terra em cena',
     note: 'Volume · matéria · silêncio',
-    media: [{ type: 'image', src: '/media/terracotta-stage.jpg', alt: 'Editorial em cenário monocromático terracota com raposa' }],
+    media: [
+      { type: 'image', src: '/media/terracotta-group.jpg', alt: 'Três modelos no cenário terracota diante de uma composição com raposas' },
+      { type: 'image', src: '/media/terracotta-stage.jpg', alt: 'Editorial em cenário monocromático terracota com raposa' },
+    ],
   },
   {
     title: 'Faroeste urbano',
