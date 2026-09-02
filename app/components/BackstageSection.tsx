@@ -67,7 +67,7 @@ export function BackstageSection() {
       <div className="backstage-stage">
         {backstageClips.map((clip, index) => (
           <figure
-            className={`backstage-card ${clip.className}`}
+            className={`backstage-card ${clip.className}${clip.id === '01' || clip.id === '04' ? ' backstage-mobile-wide' : ''}`}
             data-reveal="media"
             data-reveal-delay={String(index + 1)}
             data-reveal-duration="long"
