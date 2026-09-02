@@ -74,6 +74,7 @@ export function BackstageSection() {
             key={clip.id}
           >
             <AmbientVideo src={clip.src} poster={clip.poster} label={clip.label} />
+            <span className="backstage-frame" aria-hidden="true" />
             <div className="backstage-card-top" aria-hidden="true">
               <span className="backstage-rec">REC</span>
               <span>BACKSTAGE / {clip.id}</span>
