@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { BackstageSection } from './components/BackstageSection';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -29,18 +29,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="studio-entry" data-reveal-section aria-labelledby="entry-title">
-          <div className="entry-copy">
-            <p className="section-index" data-reveal="fade-right">02 — Entrada</p>
-            <h2 id="entry-title" data-reveal="fade-right" data-reveal-delay="1" data-reveal-duration="long">Atravesse<br />o galpão.</h2>
-            <p data-reveal="blur" data-reveal-delay="2">Concreto, luz, estrutura e silêncio antes do clique. O percurso começa muito antes da câmera.</p>
-            <dl data-reveal="fade-up" data-reveal-delay="4"><div><dt>Formato</dt><dd>Foto + Vídeo</dd></div><div><dt>Ciclo</dt><dd>07 dias</dd></div><div><dt>Estado</dt><dd>Em transformação</dd></div></dl>
-          </div>
-          <div className="entry-media" data-reveal="media" data-reveal-delay="3" data-reveal-duration="long">
-            <Image className="entry-backdrop" src="/media/behind-the-scenes.jpg" alt="Bastidores de uma produção no estúdio ANEXO 7" fill sizes="(max-width: 800px) 100vw, 65vw" />
-            <span className="entry-time" aria-hidden="true">REC · ANEXO 7</span>
-          </div>
-        </section>
+        <BackstageSection />
 
         <ScenarioGallery />
 
