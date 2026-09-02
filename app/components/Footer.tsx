@@ -22,7 +22,7 @@ export function Footer() {
           <small>Sem spam. Só novas ideias em cena.</small>
         </div>
       </div>
-      <div className="footer-bottom" data-reveal-section data-reveal="fade-up"><p>© {new Date().getFullYear()} ANEXO 7. Todos os direitos reservados.</p><p>Um novo cenário a cada 7 dias.</p><a href="#inicio">Voltar ao topo ↑</a></div>
+      <div className="footer-bottom" data-reveal-section><p>© {new Date().getFullYear()} ANEXO 7. Todos os direitos reservados.</p><p>Um novo cenário a cada 7 dias.</p><a href="#inicio">Voltar ao topo ↑</a></div>
     </footer>
   );
 }
