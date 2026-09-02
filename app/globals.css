@@ -266,23 +266,36 @@ img, video { display: block; }
   .manifest { min-height: auto; }
   .manifest-orbit-core { width: 60%; }
   .manifest-note { grid-template-columns: 1fr; gap: 24px; }
-  .backstage-heading { display: block; margin-bottom: 52px; }
+  .backstage-section { padding: 88px 16px 84px; }
+  .backstage-heading { display: block; margin-bottom: 42px; }
   .backstage-heading .section-index { margin-bottom: 34px; }
   .backstage-eyebrow { margin-bottom: 22px; }
   .backstage-heading h2 { font-size: clamp(52px, 15.5vw, 82px); line-height: .9; }
   .backstage-intro { margin: 24px 0 0; max-width: 360px; font-size: clamp(18px, 5vw, 21px); }
   .backstage-scroll-cue { margin-top: 20px; }
-  .backstage-stage { display: flex; flex-direction: column; gap: 34px; }
-  .backstage-card { flex: none; }
-  .backstage-card--main { width: 100%; aspect-ratio: 4 / 3; }
-  .backstage-card--portrait { width: 70%; aspect-ratio: 9 / 16; align-self: flex-end; }
-  .backstage-card--production { width: 88%; aspect-ratio: 16 / 9; }
-  .backstage-card--wide { width: 78%; aspect-ratio: 16 / 9; align-self: flex-end; }
+  .backstage-stage { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; gap: 14px 10px; }
+  .backstage-card { width: auto; align-self: stretch; }
+  .backstage-card--main { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 4 / 3; }
+  .backstage-card--portrait { grid-column: 1 / -1; grid-row: auto; width: 92%; aspect-ratio: 1 / 1.05; justify-self: end; }
+  .backstage-card--portrait video { object-fit: contain; background: #090909; }
+  .backstage-card--production, .backstage-card--wide { grid-row: auto; width: auto; aspect-ratio: 1 / 1; align-self: stretch; }
+  .backstage-card--production { grid-column: 1; }
+  .backstage-card--wide { grid-column: 2; }
   .backstage-card::after, .backstage-card .ambient-video { inset: 8px; }
-  .backstage-frame { inset: 4px; }
+  .backstage-frame { inset: 4px; background-size: 12px 1px, 1px 12px, 12px 1px, 1px 12px, 12px 1px, 1px 12px, 12px 1px, 1px 12px; }
   .backstage-card-top { top: 20px; right: 21px; left: 21px; }
   .backstage-card figcaption { right: 21px; bottom: 18px; left: 21px; gap: 2px 12px; }
   .backstage-card-top, .backstage-card figcaption { font-size: var(--type-label); }
+  .backstage-card--production .backstage-card-top, .backstage-card--wide .backstage-card-top { top: 14px; right: 15px; left: 15px; gap: 7px; font-size: 10px; letter-spacing: .06em; }
+  .backstage-card--production .backstage-card-top span:last-child, .backstage-card--wide .backstage-card-top span:last-child { font-size: 0; }
+  .backstage-card--production .backstage-card-top span:last-child::after, .backstage-card--wide .backstage-card-top span:last-child::after { font-size: 10px; }
+  .backstage-card--production .backstage-card-top span:last-child::after { content: '03'; }
+  .backstage-card--wide .backstage-card-top span:last-child::after { content: '04'; }
+  .backstage-card--production figcaption, .backstage-card--wide figcaption { right: 15px; bottom: 13px; left: 15px; gap: 2px 7px; font-size: 10px; letter-spacing: .04em; }
+  .backstage-card--production figcaption span:first-child, .backstage-card--wide figcaption span:first-child { font-size: 0; }
+  .backstage-card--production figcaption span:first-child::after, .backstage-card--wide figcaption span:first-child::after { content: 'EM PRODUÇÃO'; font-size: 10px; }
+  .backstage-card--production figcaption span:nth-child(2), .backstage-card--wide figcaption span:nth-child(2) { display: none; }
+  .backstage-card--production figcaption time, .backstage-card--wide figcaption time { grid-row: 1; }
   .scenarios-heading { display: block; }
   .scenarios-heading h2 { margin-top: 48px; }
   .scenarios-intro { margin-top: 28px; }
@@ -299,10 +312,10 @@ img, video { display: block; }
   .newsletter { grid-column: auto; }
   .footer-bottom { flex-direction: column; gap: 12px; }
   .brand-mark-footer { width: 258px; height: 86px; }
-  .whatsapp-float { right: 14px; bottom: 14px; min-width: 0; padding: 8px; }
+  .whatsapp-float { right: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); min-width: 0; padding: 3px; }
   .whatsapp-float > span:nth-child(2), .whatsapp-float > i { display: none; }
-  .whatsapp-mark { width: 44px; height: 44px; }
-  .whatsapp-mark svg { width: 24px; height: 24px; }
+  .whatsapp-mark { width: 38px; height: 38px; }
+  .whatsapp-mark svg { width: 21px; height: 21px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
