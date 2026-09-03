@@ -170,7 +170,7 @@ export function ScenarioGallery() {
         </div>
         <div className="gallery-controls" data-reveal="fade-up" data-reveal-delay="4">
           <p><span>{String(current + 1).padStart(2, '0')}</span> / {String(scenes.length).padStart(2, '0')}</p>
-          <div><button type="button" onClick={() => move(-1)} aria-label="Cenário anterior">←</button><button type="button" onClick={() => move(1)} aria-label="Próximo cenário">→</button></div>
+          <div className="gallery-navigation"><button type="button" onClick={() => move(-1)} aria-label="Cenário anterior">←</button><button type="button" onClick={() => move(1)} aria-label="Próximo cenário">→</button></div>
         </div>
       </div>
     </section>
