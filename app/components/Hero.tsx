@@ -18,17 +18,19 @@ export function Hero() {
       else video.pause();
     };
 
-    const observer = new IntersectionObserver(([entry]) => {
-      isVisible.current = entry.isIntersecting && entry.intersectionRatio >= 0.28;
-      syncPlayback();
-    }, { threshold: [0, 0.28, 0.65] });
+    const observer = 'IntersectionObserver' in window
+      ? new IntersectionObserver(([entry]) => {
+          isVisible.current = entry.isIntersecting && entry.intersectionRatio >= 0.28;
+          syncPlayback();
+        }, { threshold: [0, 0.28, 0.65] })
+      : null;
 
-    observer.observe(section);
+    observer?.observe(section);
     document.addEventListener('visibilitychange', syncPlayback);
     syncPlayback();
 
     return () => {
-      observer.disconnect();
+      observer?.disconnect();
       document.removeEventListener('visibilitychange', syncPlayback);
     };
   }, []);

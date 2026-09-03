@@ -9,13 +9,14 @@ import { WhatsAppFloat } from './components/WhatsAppFloat';
 
 export default function Home() {
   return (
-    <main className="anexo-site">
+    <>
       <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <Header />
-      <Hero />
-      <ScrollReveal />
 
-      <div id="conteudo">
+      <main className="anexo-site" id="conteudo">
+        <Hero />
+        <ScrollReveal />
+
         <section className="manifest" id="conceito" data-reveal-section aria-labelledby="manifest-title">
           <div className="manifest-number" data-reveal="scale" data-reveal-delay="3" data-reveal-duration="long" aria-hidden="true"><OrbitSeven /></div>
           <div className="manifest-copy">
@@ -40,10 +41,10 @@ export default function Home() {
           <div className="cycle-seven" data-reveal="scale" data-reveal-delay="2" data-reveal-duration="long" aria-hidden="true">7</div>
           <p className="cycle-caption" data-reveal="fade-left" data-reveal-delay="3">Um ciclo contínuo de arquitetura, direção de arte e imagem.</p>
         </section>
-      </div>
+      </main>
 
       <Footer />
       <WhatsAppFloat />
-    </main>
+    </>
   );
 }
