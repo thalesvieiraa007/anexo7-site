@@ -112,8 +112,6 @@ function SceneCard({ scene, index }: { scene: Scene; index: number }) {
   return (
     <article
       className="scene"
-      data-reveal="scene"
-      data-reveal-delay={String(Math.min(index + 3, 4))}
       aria-label={`Cenário ${index + 1} de ${scenes.length}: ${scene.title}`}
     >
       <div className="scene-media">
@@ -167,7 +165,7 @@ export function ScenarioGallery() {
         <p className="scenarios-intro" data-reveal="fade-up" data-reveal-delay="2">Cada ambiente nasce com prazo para desaparecer. Arraste, descubra e imagine o próximo.</p>
       </div>
       <div className="gallery-shell">
-        <div ref={trackRef} className="gallery-track" onScroll={syncCurrent} tabIndex={0} aria-label={`Galeria horizontal de ${scenes.length} cenários`}>
+        <div ref={trackRef} className="gallery-track" data-reveal="scene" data-reveal-delay="3" onScroll={syncCurrent} tabIndex={0} aria-label={`Galeria horizontal de ${scenes.length} cenários`}>
           {scenes.map((scene, index) => <SceneCard scene={scene} index={index} key={scene.title} />)}
         </div>
         <div className="gallery-controls" data-reveal="fade-up" data-reveal-delay="4">
